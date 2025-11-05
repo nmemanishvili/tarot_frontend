@@ -3,10 +3,13 @@ import { UserService, User } from '../user.service';
 
 @Component({
   selector: 'app-user-list',
+  standalone: true,
   template: `
     <h2>Users</h2>
     <ul>
-      <li *ngFor="let user of users">{{ user.name }} ({{ user.email }})</li>
+      @for(user of users; track user.id){
+        <li>{{user.name}} {{user.email}}</li>
+      }
     </ul>
   `
 })

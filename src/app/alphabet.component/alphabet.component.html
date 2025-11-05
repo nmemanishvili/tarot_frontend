@@ -1,0 +1,12 @@
+<!-- src/app/components/alphabet/alphabet.component.html -->
+<div style="margin: 30px; text-align: center;">
+  <h2>მოიძიე ასოს რიცხვითი მნიშვნელობა</h2>
+
+  <input [(ngModel)]="letter" placeholder="შეიყვანე ასო" maxlength="1" />
+  <button (click)="getValue()">ძიება</button>
+
+  <div style="margin-top: 20px;">
+    @if (value !== undefined) {<h3>ასო "{{letter}}" მნიშვნელობაა: {{value}}</h3>}
+    
+  </div>
+</div>
