@@ -1,28 +1,41 @@
-<h1>tarot.component works!</h1>
 
-<div style="padding:1rem; max-width:700px; margin:auto">
-      <h1>Tarot Drawer</h1>
+<div class ="main">
+  <div class="ask">
+      <h1>მიიღე პასუხები შენს კითხვებზე</h1>
+      <h2>მოემზადე სათანადოდ:</h2>
+      <ol>
+        <li>დახუჭე თვალები</li>
+        <li>ღრმად ჩაისუნთქე</li>
+        <li>გაიაზრე შეკითხვა</li>
+        <li>დააჭირე ღილაკს</li>
+      </ol>
 
-      <div>
-        <label>ბარათების რაოდენობა:
-          <input type="number" [(ngModel)]="count" min="1" max="10">
-        </label>
-        <button (click)="draw()">Draw</button>
-      </div>
+  
+      <button 
+        (click)="loadRandomCard()" 
+        class="button" 
+        [disabled]="cards.length >=maxCards"
+        >გაიგე გაქვს თუ არა ნეგატივი ე.წ. ჯადო</button>
 
-      @if (loading) { <div>loading...</div> }
+      @if (cards.length>=maxCards) {
+        <p style="color:red" > *კარტების მაქსიმალური რაოდენობა არის 3</p>
+      }
 
-      @if(cards.length){
-      <ul>
-        @for(card of cards; track card.id) {
-        <li>
-          <strong>{{card.name}}</strong> — {{card.meaning}}
-        </li>
+      <div class="cards">
+        @for (card of cards; track $index) {
+          <div class="card">
+            
+            <img [src]="'http://localhost:8080' + card.image_url" alt="arcan" />
+
+            <h3>{{card.name}}</h3>
+            <p>{{card.meaning}}</p>
+            <p>{{card?.image_url}}</p>
+          </div>
         }
-      </ul>
-      }
+      </div>
+      
 
-      @if(error){
-      <p style="color:crimson">{{error}}</p>
-      }
-    </div>
+  </div>
+    
+
+</div>

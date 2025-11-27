@@ -1,35 +1,35 @@
 import { Component, NgModule, signal } from '@angular/core';
-
-import { TarotService } from '../tarot.service';
-
+import { TarotService } from '../services/tarot.service';
+import { Card } from '../models/card.model';
 
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 
 @Component({
-  selector: 'app-tarot.component',
+  selector: 'app-tarot',
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './tarot.component.html',
   styleUrl: './tarot.component.css',
 })
 export class TarotComponent {
-  count = 3;
-  cards: any[] = [];
-  loading = false;
-  error = '';
-  
+ cards: Card [] = [];
+ maxCards=3;
   
 
-  constructor(private tarot: TarotService) {}
+  constructor(private tarotService: TarotService) {}
 
-  draw() {
-    this.error = '';
-    this.loading = true;
-    this.tarot.draw({ count: this.count }).subscribe({
-      next: (res: any) => { this.cards = res.cards || []; this.loading = false; },
-      error: (err) => { this.error = err?.message || 'Request failed'; this.loading = false; }
-    });
+
+  loadRandomCard() {
+    if (this.cards.length >= this.maxCards){
+      return;
+    }
+    this.tarotService.getRandomCard().subscribe(card=> {
+      console.log("card:", card)
+      this.cards.push(card);
+    
+    })
   }
+  
 }
