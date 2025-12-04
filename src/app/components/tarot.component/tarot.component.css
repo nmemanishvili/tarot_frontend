@@ -1,0 +1,129 @@
+/* 
+.main {
+    display: flex;
+    color: darkcyan;
+    font-weight: bold;
+    flex-direction: column;
+    align-items: center;
+}
+.ask {
+    width: 100%;
+    background-color: lavender;
+    padding: 10px;
+    border: 1px solid darkcyan;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.hidden {
+    display: none;
+}
+.disabled {
+  display: none;
+}
+.active {
+    border: solid 1px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.draw, .button {
+    background-color: thistle;
+    color: rgb(103, 97, 94);
+    font-family: sans-serif;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border-color: #2a2640;
+    color: #2a2640;
+}
+.number {
+    background-color: thistle;
+    border: solid 1px darkcyan;
+    border-radius: 5px;
+    text-align: center;
+    color: sienna;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.card {
+  width: 220px;
+  background: linear-gradient(145deg, #1e1b2e, #2a2640);
+  border-radius: 14px;
+  padding: 15px;
+  text-align: center;
+  color: #f4f0ff;
+  box-shadow: 0 10px 25px rgba(0, 0, 40, 0.35);
+  transition: 0.35s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transform: translateY(10px);
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 35px rgba(0, 0, 60, 0.45);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 30, 0.4);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin: 10px 0 5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.4rem;
+  opacity: 0.9;
+}
+
+.card_back {
+  width: 30%;
+  cursor: pointer;
+  
+}
+.card_back img{
+  max-width: 100%;
+}
+.card_back img:hover{
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 35px rgba(0, 0, 60, 0.45);
+}   */
+
+/* ------------------------------------------------------- */
+
+/* ===== Background Gradient + Stars ===== */
+
+
+

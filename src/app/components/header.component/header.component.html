@@ -1,0 +1,44 @@
+<header class="nav">
+  <div class="nav-container">
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="card.png" alt="Tarot" />
+      <span class="brand">VerTes</span>
+    </div>
+
+    <!-- Desktop Menu -->
+    <nav class="menu desktop-menu">
+      <a href="#">მთავარი</a>
+      <a href="#">ტარო</a>
+      <a href="#">ისწავლე</a>
+      <a href="#">საიტის შესახებ</a>
+      <a href="#">სხვა სერვისები</a>
+    </nav>
+
+    <button class="btn-primary desktop-btn">დაიწყე</button>
+
+   
+    @if (menuOpen) {
+  <div class="overlay" (click)="closeMenu()"></div>
+}
+    <!-- Hamburger (mobile only) -->
+    <button class="hamburger" (click)="toggleMenu()">
+      <span [class.open]="menuOpen"></span>
+      <span [class.open]="menuOpen"></span>
+      <span [class.open]="menuOpen"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Slide Menu -->
+  <div class="mobile-menu" [class.open]="menuOpen">
+    <nav>
+      <a (click)="closeMenu()" href="#">Home</a>
+      <a (click)="closeMenu()" href="#">About</a>
+      <a (click)="closeMenu()" href="#">Services</a>
+      <a (click)="closeMenu()" href="#">Blog</a>
+      <a (click)="closeMenu()" href="#">Contact</a>
+      <button class="btn-primary full-btn">დაიწყე</button>
+    </nav>
+  </div>
+</header>

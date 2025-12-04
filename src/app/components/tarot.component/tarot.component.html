@@ -1,0 +1,45 @@
+
+<app-header></app-header>
+<app-home></app-home>
+
+<div class ="main">
+  <h1>გაიგე გაქვს თუ არა ჯადო</h1>
+   
+  <div class="ask">
+      @if (cards.length >= maxCards) {
+        <p id="attention" style="color:red" > 
+          *პასუხი ნათელია, მეტი კარტის დადება არ არის საჭირო
+        </p>
+      }
+      <button id="start"
+        (click)="loadRandomCard()" 
+        class="card" 
+        [disabled]="cards.length >= maxCards"
+        >
+          <img src="card.png" alt="tarot card back" />
+      </button>   
+      <div class="cards">
+        @for (card of cards; track $index) {
+          <div class="card">
+           <img [src]="'http://localhost:8080' + card.image_url" alt="arcan" />
+            <h3>{{card.name}}</h3>
+            <p>{{card.meaning}}</p>
+            <p>{{card?.image_url}}</p>
+            <p> {{card.more_card}} </p>
+          </div>
+        }
+      </div>
+      
+
+  </div>
+  
+    
+
+</div>
+
+<!-- ////////////////////////////////////////////////////////////// -->
+
+
+
+
+<router-outlet></router-outlet>
