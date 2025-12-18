@@ -1,0 +1,198 @@
+/* Basic Reset and Styling */
+:host {
+  display: block;
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+/* Button Styling */
+button {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Card Base Styling */
+.card {
+  width: 60px; /* Base mobile width */
+  height: 100px; /* Base mobile height */
+  background-color: #4dc0e0;
+  border: 1px solid #000;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-name {
+  font-size: 0.6rem;
+  width: 100%;
+}
+
+.card-name-rotated {
+  transform: rotate(90deg);
+  white-space: nowrap;
+}
+
+/* Mobile Layout (Stacked Vertically) */
+.cross-section,
+.staff-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-center {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Labels Section (Mobile) */
+.labels-section p {
+  margin: 0.25rem 0;
+}
+
+
+/* --- Desktop Layout (Min-width 768px) --- */
+@media (min-width: 768px) {
+  
+  /* Overall container for the desktop layout (Cross, Staff, Labels side-by-side) */
+  :host {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+
+  /* Card dimensions are slightly larger on desktop */
+  .card {
+    width: 80px;
+    height: 120px;
+    font-size: 1rem;
+  }
+
+  .card-name {
+    font-size: 0.75rem;
+  }
+
+  /* Cross Section Desktop Layout (using Grid) */
+  .cross-section {
+    display: grid;
+    /* Defines a 3x3 grid where the center is empty space for .card-center */
+    grid-template-areas:
+      ". card3 ."
+      "card5 center card6"
+      ". card4 .";
+    gap: 10px;
+    /* Adjust grid size to fit the cards and gaps */
+    grid-template-columns: 80px 100px 80px;
+    grid-template-rows: 120px 140px 120px;
+    flex-direction: row; /* Override mobile stacking */
+    margin-bottom: 0;
+  }
+
+  /* Positioning the individual cross cards within the grid */
+  .card-3 { grid-area: card3; }
+  .card-4 { grid-area: card4; }
+  .card-5 { grid-area: card5; }
+  .card-6 { grid-area: card6; }
+
+  /* Center Cards Desktop Layout */
+  .card-center {
+    grid-area: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; /* Tighter gap for the center stack */
+  }
+
+  /* Staff Section Desktop Layout (Vertical Stack) */
+  .staff-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  /* Aligning the staff cards to match the visual image */
+  .card-10 { order: 1; }
+  .card-9 { order: 2; }
+  .card-8 { order: 3; }
+  .card-7 { order: 4; }
+
+  /* Labels section alignment (desktop) */
+  .labels-section {
+    align-self: flex-start;
+  }
+}
+
+/* ... (Existing mobile-first CSS from previous response) ... */
+
+/* Add background image styling */
+.background-container {
+  /* background-image: url('.public/back.jpg');  */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Ensures the background covers the whole screen height */
+  padding: 1rem;
+  color: white; /* Ensure text is visible over a dark background */
+}
+
+/* Ensure the button is visible */
+button {
+  z-index: 10;
+  position: relative;
+}
+
+/* Optional: Add a slight overlay to ensure text/cards pop */
+.background-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
+}
+
+.app-content-wrapper {
+  position: relative; /* Brings content above the overlay (z-index 1) */
+  z-index: 2;
+}
+
+/* Adjustments for text color on dark background */
+.card {
+  color: #333; /* Keep card text dark for contrast on the light blue cards */
+}
+
+.labels-section p {
+  color: white; 
+}
+

@@ -16,6 +16,10 @@ export class TarotService {
   getRandomCard(): Observable<Card> {
     return this.http.get<Card>(`${this.url}/random`);
   }
+
+  getRandomTen(): Observable<Card[]> {
+    return this.http.get<Card[]>(`${this.url}/random/10`);
+  }
   
   
 }

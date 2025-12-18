@@ -250,3 +250,7 @@ body::before {
   backdrop-filter: blur(2px);
   z-index: 900; /* must be under mobile menu */
 }
+
+.menu {
+  cursor: pointer;
+}

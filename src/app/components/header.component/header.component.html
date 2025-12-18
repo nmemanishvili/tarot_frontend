@@ -9,11 +9,11 @@
 
     <!-- Desktop Menu -->
     <nav class="menu desktop-menu">
-      <a href="#">მთავარი</a>
-      <a href="#">ტარო</a>
-      <a href="#">ისწავლე</a>
-      <a href="#">საიტის შესახებ</a>
-      <a href="#">სხვა სერვისები</a>
+      <a href="/home" >მთავარი</a>
+      <a href="/tarot" >ტარო</a>
+      <a href="/learn" >ისწავლე</a>
+      <a href="/about" >საიტის შესახებ</a>
+      <a href="/tarot">სხვა სერვისები</a>
     </nav>
 
     <button class="btn-primary desktop-btn">დაიწყე</button>
@@ -33,12 +33,13 @@
   <!-- Mobile Slide Menu -->
   <div class="mobile-menu" [class.open]="menuOpen">
     <nav>
-      <a (click)="closeMenu()" href="#">Home</a>
-      <a (click)="closeMenu()" href="#">About</a>
-      <a (click)="closeMenu()" href="#">Services</a>
-      <a (click)="closeMenu()" href="#">Blog</a>
-      <a (click)="closeMenu()" href="#">Contact</a>
+      <a (click)="closeMenu()" href="/home">Home</a>
+      <a (click)="closeMenu()" href="/tarot">tarot</a>
+      <a (click)="closeMenu()" href="/services">Services</a>
+      <a (click)="closeMenu()" href="/learn">learn</a>
+      <a (click)="closeMenu()" href="about">Contact</a>
       <button class="btn-primary full-btn">დაიწყე</button>
     </nav>
   </div>
+
 </header>

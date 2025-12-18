@@ -1,0 +1,54 @@
+
+<button (click)="drawCards()" >celtic cross</button>
+<div class="cross-section">
+
+  @for (card of crossCards; track card.key) {
+    <div
+      class="card {{ card.cssClass }}"
+      [title]="spread?.[card.key]?.meaning"
+    >
+      {{ spread?.[card.key]?.id }}
+      <div class="card-name">
+        {{ spread?.[card.key]?.name }}
+      </div>
+    </div>
+  }
+
+  <div class="card-center">
+    @for (card of centerCards; track card.key) {
+      <div
+        class="card {{ card.cssClass }}"
+        [title]="spread?.[card.key]?.meaning"
+      >
+        {{ spread?.[card.key]?.id }}
+        <div
+          class="card-name"
+          [class.card-name-rotated]="card.key === '2_challenge'"
+        >
+          {{ spread?.[card.key]?.name }}
+        </div>
+      </div>
+    }
+  </div>
+
+</div>
+<div class="labels-section">
+  @for (label of labels; track $index) {
+    <p><strong>{{ $index + 1 }}.</strong> {{ label }}</p>
+  }
+</div>
+<div class="staff-section">
+  @for (card of staffCards; track card.key) {
+    <div
+      class="card {{ card.cssClass }}"
+      [title]="spread?.[card.key]?.meaning"
+    >
+      {{ spread?.[card.key]?.id }}
+      <div class="card-name">
+        {{ spread?.[card.key]?.name }}
+      </div>
+    </div>
+  }
+</div> 
+
+

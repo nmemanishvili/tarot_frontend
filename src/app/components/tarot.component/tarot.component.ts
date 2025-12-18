@@ -1,17 +1,13 @@
 import { Component, NgModule, signal } from '@angular/core';
 import { TarotService } from '../../services/tarot.service';
 import { Card } from '../../models/card.model';
-
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HomeComponent } from "../home.component/home.component";
-import { HeaderComponent } from '../header.component/header.component';
 
 @Component({
   selector: 'app-tarot',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterOutlet, HeaderComponent, HomeComponent],
+  imports: [FormsModule, CommonModule],
   templateUrl: './tarot.component.html',
   styleUrl: './tarot.component.css',
 })
